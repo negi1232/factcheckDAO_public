@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/factcheckDAO_public/static/css/main.95f35e7e.css",
-    "main.js": "/factcheckDAO_public/static/js/main.5ab2e5ef.js",
+    "main.js": "/factcheckDAO_public/static/js/main.3862b848.js",
     "static/js/208.0d26a9e1.chunk.js": "/factcheckDAO_public/static/js/208.0d26a9e1.chunk.js",
     "static/js/180.c978303a.chunk.js": "/factcheckDAO_public/static/js/180.c978303a.chunk.js",
     "static/media/rate6.png": "/factcheckDAO_public/static/media/rate6.fda3420764da87b33fd3.png",
@@ -15,12 +15,12 @@
     "static/media/rate0.png": "/factcheckDAO_public/static/media/rate0.59dde9ae0ec4df84ae00.png",
     "index.html": "/factcheckDAO_public/index.html",
     "main.95f35e7e.css.map": "/factcheckDAO_public/static/css/main.95f35e7e.css.map",
-    "main.5ab2e5ef.js.map": "/factcheckDAO_public/static/js/main.5ab2e5ef.js.map",
+    "main.3862b848.js.map": "/factcheckDAO_public/static/js/main.3862b848.js.map",
     "208.0d26a9e1.chunk.js.map": "/factcheckDAO_public/static/js/208.0d26a9e1.chunk.js.map",
     "180.c978303a.chunk.js.map": "/factcheckDAO_public/static/js/180.c978303a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.95f35e7e.css",
-    "static/js/main.5ab2e5ef.js"
+    "static/js/main.3862b848.js"
   ]
 }
