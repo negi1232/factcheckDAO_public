@@ -28,7 +28,7 @@ function RequestFactcheck_list_receive({contracts, reloadKey}) {
             {request_fc_list.length === 0 && <p>まだリクエストはありません</p>}
 
             {request_fc_list.map((request_fc, index) => (
-                <Link className="card" key={index} to={process.env.PUBLIC_URL + "/factcheck/receive/" + request_fc.args.requestId} style={{textDecoration: "none"}}>
+                <Link className="card" key={index} to={"/factcheck/receive/" + request_fc.args.requestId} style={{textDecoration: "none"}}>
                     <div className="row">
                         <div className="col-3">
                             <div className="thumbnail">

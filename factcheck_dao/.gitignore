@@ -5,8 +5,11 @@
 /.pnp
 .pnp.js
 
+./src/contracts/networks.js
+
 # testing
 /coverage
+/contracts/networks.js
 
 # production
 /build

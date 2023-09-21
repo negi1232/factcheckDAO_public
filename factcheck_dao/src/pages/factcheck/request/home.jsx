@@ -32,7 +32,7 @@ function RequestFactcheck({contracts, reloadKey}) {
         const response = await contracts.request_factheck(1, title, description, thumbnailUrl, content, reward * 10 ** 18, deadline, selectedCategory);
         if (response !== null) {
             alert("投稿しました");
-            navigate(process.env.PUBLIC_URL + "/factcheck/receive/" + response);
+            navigate("/factcheck/receive/" + response);
         } else {
             alert("投稿に失敗しました");
         }

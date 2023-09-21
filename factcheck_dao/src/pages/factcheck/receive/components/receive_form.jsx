@@ -1,9 +1,9 @@
-import { React, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Form, InputGroup, Button } from "react-bootstrap";
+import {React, useState, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
+import {Form, InputGroup, Button} from "react-bootstrap";
 import MarkDownEditor from "../../../../components/markdown";
 
-function ReceiveForm({ contracts, reloadKey, requestId }) {
+function ReceiveForm({contracts, reloadKey, requestId}) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [content, setContent] = useState("");
@@ -23,7 +23,7 @@ function ReceiveForm({ contracts, reloadKey, requestId }) {
         if (response !== null) {
             alert("投稿しました");
             console.log(response);
-            navigate(process.env.PUBLIC_URL + "/factcheck/browse/" + response);
+            navigate("/factcheck/browse/" + response);
         } else {
             alert("投稿に失敗しました");
         }
