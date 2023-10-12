@@ -45,23 +45,15 @@ console.log(token_abi_json);
 if (window.ethereum) {
     window.ethereum.on("chainChanged", () => {
         window.location.reload();
-        Contract.setWalletClient();
     });
     window.ethereum.on("accountsChanged", () => {
         window.location.reload();
-        Contract.setWalletClient();
     });
 }
 
 const history = createBrowserHistory();
 
 class Contract {
-    async setWalletClient() {
-        const walletClient = createWalletClient({
-            chain: fujihalab,
-            transport: custom(window.ethereum),
-        });
-    }
     constructor(receipt, setReceipt, reloadPage, setShow) {
         this.receipt = receipt;
         this.setReceipt = setReceipt;
@@ -182,15 +174,10 @@ class Contract {
     }
 
     async get_parameters() {
-        let a = await dao_contract.read.getParameters();
-        console.log(a);
+        console.log(await dao_contract.read.getParameters());
         return (await dao_contract.read.getParameters()).slice(1);
     }
     async get_parameter(index) {
-        console.log(index, index);
-        console.log(dao_contract.read.getParameter({args: [index]}));
-        let a = await dao_contract.read.getParameter({args: [index]});
-        console.log(a, index);
         return await dao_contract.read.getParameter({args: [index]});
     }
 
@@ -292,7 +279,7 @@ class Contract {
                 address: token_data[0].address,
                 ...token_abi_json,
                 functionName: "approve",
-                args: [dao_data[0].address, Number(amount)],
+                args: [dao_data[0].address, amount],
             });
             return await walletClient.writeContract(request);
         } catch (e) {
