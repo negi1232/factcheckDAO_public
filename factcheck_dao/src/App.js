@@ -4,7 +4,7 @@ import {Container} from "react-bootstrap";
 import {isMobile} from "react-device-detect";
 
 import Contract from "./contract/contracts";
-import {fujihalab} from "./contract/network";
+import {bloxberg} from "./contract/network";
 import ModalChangeNetwork from "./pages/modals/Modal_change_network";
 import ModalLogin from "./pages/modals/Modal_login";
 import Wait_Modal from "./pages/modals/wait_Modal";
@@ -45,8 +45,8 @@ function App() {
     }
 
     useEffect(() => {
-        console.log(isConnect, networkId, fujihalab.id);
-        if (isConnect && networkId === fujihalab.id) {
+        console.log(isConnect, networkId, bloxberg.id);
+        if (isConnect && networkId === bloxberg.id) {
             getUser();
             console.log("getBalance");
         } else {
@@ -56,7 +56,7 @@ function App() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isConnect, networkId, reloadKey]);
 
-    if (networkId !== fujihalab.id) {
+    if (networkId !== bloxberg.id) {
         return <ModalChangeNetwork chain_id={networkId} contracts={contracts} />;
     } else if (!isConnect) {
         return <ModalLogin contracts={contracts} />;

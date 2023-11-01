@@ -16,7 +16,7 @@ const ModalChangeNetwork = (props) => {
                             }}
                         >
                             {/* 文字を白くする */}
-                            <h2>私たちの利用するpolygon mumbaiに接続してください</h2>
+                            <h2>bloxbergに接続してください</h2>
                             <br />
                             <button
                                 type="button"

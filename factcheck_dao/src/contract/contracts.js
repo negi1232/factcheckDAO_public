@@ -1,5 +1,5 @@
 import {createPublicClient, createWalletClient, http, getContract, parseAbiItem, decodeEventLog, custom} from "viem";
-import {fujihalab} from "./network";
+import {bloxberg} from "./network";
 import dao_abi_json from "./dao_abi.json";
 import token_abi_json from "./Fc_token_abi.json";
 import factcheck_abi_json from "./FactCheck_Contract_abi.json";
@@ -9,12 +9,12 @@ import factcheck_data from "./contracts-data/fujihalab/FactCheck_Contract-data.j
 import {createBrowserHistory} from "history";
 
 const walletClient = createWalletClient({
-    chain: fujihalab,
+    chain: bloxberg,
     transport: custom(window.ethereum),
 });
 
 const publicClient = createPublicClient({
-    chain: fujihalab,
+    chain: bloxberg,
     transport: http(),
 });
 
@@ -79,7 +79,7 @@ class Contract {
     }
     async switch_network() {
         try {
-            await walletClient.switchChain({id: fujihalab.id});
+            await walletClient.switchChain({id: bloxberg.id});
         } catch (e) {
             //userがrejectした場合
             if (e.code === 4001) {
@@ -91,7 +91,7 @@ class Contract {
     }
     async add_network() {
         try {
-            await walletClient.addChain({chain: fujihalab});
+            await walletClient.addChain({chain: bloxberg});
         } catch (e) {
             console.log(e);
         }

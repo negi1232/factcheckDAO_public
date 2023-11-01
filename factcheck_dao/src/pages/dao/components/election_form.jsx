@@ -15,7 +15,8 @@ function ElectionForm({contracts, parameters_index, name, value, decimals, unit,
         <Container>
             <Form>
                 <Form.Group className="mb-3" style={{textAlign: "left"}}>
-                    <Form.Label>選挙の詳細</Form.Label>
+                    {/* <Form.Label>選挙の詳細</Form.Label> */}
+                    <Form.Label>Election details</Form.Label>
                     <Form.Control
                         type="text"
                         as="textarea"
@@ -28,7 +29,8 @@ function ElectionForm({contracts, parameters_index, name, value, decimals, unit,
                 </Form.Group>
 
                 <Form.Group className="mb-3" style={{textAlign: "left"}}>
-                    <Form.Label>回答締切日時</Form.Label>
+                    {/* <Form.Label>回答締切日時</Form.Label> */}
+                    <Form.Label>Response deadline date and time</Form.Label>
                     <Form.Control
                         style={{color: "black"}}
                         value={deadline}
@@ -42,21 +44,24 @@ function ElectionForm({contracts, parameters_index, name, value, decimals, unit,
                 </Form.Group>
 
                 <Row className="align-items-center">
-                    <Col xs={2} className="text-center">
+                    <Col xs={12} md={5} className="text-center">
                         <Form.Group>
-                            <Form.Label>現在の値</Form.Label>
+                            {/* <Form.Label>現在の値</Form.Label> */}
+                            <Form.Label>current value</Form.Label>
                             <InputGroup>
                                 <Form.Control type="number" value={value / 10 ** decimals} readOnly />
                                 <InputGroup.Text>{unit}</InputGroup.Text>
                             </InputGroup>
                         </Form.Group>
                     </Col>
-                    <Col xs={3} className="d-flex align-items-center justify-content-center">
+                    <Col xs={12} md={2} className="d-flex align-items-center justify-content-center">
                         <AiOutlineArrowRight />
                     </Col>
-                    <Col xs={3} className="text-center">
+                    <Col xs={12} md={5} className="text-center">
                         <Form.Group>
-                            <Form.Label>提案する値</Form.Label>
+                            {/* <Form.Label>提案する値</Form.Label> */}
+                            <Form.Label>Suggested value</Form.Label>
+
                             <InputGroup>
                                 <Form.Control
                                     type="number"
@@ -72,7 +77,7 @@ function ElectionForm({contracts, parameters_index, name, value, decimals, unit,
                                         contracts.start_election(parameters_index, proposalValue * 10 ** decimals, name + "を" + value / 10 ** decimals + unit + "から" + proposalValue + unit + "に変更する選挙", description, deadline, election_start_amount);
                                     }}
                                 >
-                                    確定
+                                    Confirm
                                 </Button>
                             </InputGroup>
                         </Form.Group>
